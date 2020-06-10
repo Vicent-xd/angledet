@@ -1,0 +1,113 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/10/2020  14:20:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\congji2.obj TO .\Objects\congji2 PRINT (.\Listings\congji2.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\congji2.obj (CONGJI2)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\congji2 (CONGJI2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0009H     UNIT         _DATA_GROUP_
+                    0011H     000FH                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?CONGJI2
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     001BH     UNIT         ?DT?CONGJI2
+            IDATA   003CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     000BH     UNIT         ?PR?_UART_2SENDONEBYTE?CONGJI2
+            CODE    000EH     000AH     UNIT         ?PR?_UART_1SENDONEBYTE?CONGJI2
+            CODE    0018H     0005H     UNIT         ?PR?MAIN?CONGJI2
+                    001DH     0006H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+                    0026H     001DH                  *** GAP ***
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     00BBH     UNIT         ?PR?UART_2INTERRUPT?CONGJI2
+            CODE    0101H     008CH     UNIT         ?C_C51STARTUP
+            CODE    018DH     0062H     UNIT         ?PR?UART_1INTERRUPT?CONGJI2
+            CODE    01EFH     0058H     UNIT         ?C?LIB_CODE
+            CODE    0247H     003DH     UNIT         ?PR?_COPY_ARR?CONGJI2
+            CODE    0284H     0032H     UNIT         ?PR?UART_1LISTEN?CONGJI2
+            CODE    02B6H     002EH     UNIT         ?PR?INITUART?CONGJI2
+            CODE    02E4H     0026H     UNIT         ?PR?_UART_1SENDPKT?CONGJI2
+            CODE    030AH     0026H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\congji2 (CONGJI2)
+
+
+SEGMENT                                  DATA_GROUP 
+  +--> CALLED SEGMENT                  START    LENGTH
+------------------------------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2020  14:20:35  PAGE 2
+
+
+?PR?UART_1INTERRUPT?CONGJI2            -----    -----
+  +--> ?PR?_UART_1SENDPKT?CONGJI2
+
+?PR?_UART_1SENDPKT?CONGJI2             0008H    0003H
+  +--> ?PR?_UART_1SENDONEBYTE?CONGJI2
+
+*** NEW ROOT ***************************************************
+
+?PR?UART_2INTERRUPT?CONGJI2            -----    -----
+  +--> ?PR?_COPY_ARR?CONGJI2
+
+?PR?_COPY_ARR?CONGJI2                  000BH    0006H
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                          -----    -----
+  +--> ?PR?MAIN?CONGJI2
+  +--> ?C_INITSEG
+
+?PR?MAIN?CONGJI2                       -----    -----
+  +--> ?PR?INITUART?CONGJI2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\congji2 (CONGJI2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C?CLDPTR
+  C:01EFH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0208H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0235H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_2SENDONEBYTE?CONGJI2
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_1LISTEN?CONGJI2
+
+Program Size: data=45.1 xdata=0 code=781
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

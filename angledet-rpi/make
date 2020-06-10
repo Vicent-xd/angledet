@@ -1,0 +1,1 @@
+g++ serial-receive.cpp -o sr -lwiringPi

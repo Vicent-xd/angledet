@@ -1,0 +1,301 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/10/2020  11:07:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\congji.obj TO .\Objects\stc12muti PRINT (.\Listings\stc12muti.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\congji.obj (CONGJI)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\stc12muti (CONGJI)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0009H     UNIT         _DATA_GROUP_
+                    0011H     000FH                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?CONGJI
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     001BH     UNIT         ?DT?CONGJI
+            IDATA   003CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     003DH     UNIT         ?PR?_COPY_ARR?CONGJI
+                    0040H     0003H                  *** GAP ***
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     00B5H     UNIT         ?PR?UART_2INTERRUPT?CONGJI
+            CODE    00FBH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0187H     0058H     UNIT         ?C?LIB_CODE
+            CODE    01DFH     003CH     UNIT         ?PR?UART_1LISTEN?CONGJI
+            CODE    021BH     002CH     UNIT         ?PR?INITUART?CONGJI
+            CODE    0247H     0026H     UNIT         ?PR?_UART_1SENDPKT?CONGJI
+            CODE    026DH     0026H     UNIT         ?C_INITSEG
+            CODE    0293H     000BH     UNIT         ?PR?_UART_2SENDONEBYTE?CONGJI
+            CODE    029EH     000AH     UNIT         ?PR?_UART_1SENDONEBYTE?CONGJI
+            CODE    02A8H     0008H     UNIT         ?PR?MAIN?CONGJI
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\stc12muti (CONGJI)
+
+
+SEGMENT                                 DATA_GROUP 
+  +--> CALLED SEGMENT                 START    LENGTH
+-----------------------------------------------------
+?PR?UART_2INTERRUPT?CONGJI            -----    -----
+  +--> ?PR?_COPY_ARR?CONGJI
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2020  11:07:02  PAGE 2
+
+
+?PR?_COPY_ARR?CONGJI                  0008H    0006H
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                         -----    -----
+  +--> ?PR?MAIN?CONGJI
+  +--> ?C_INITSEG
+
+?PR?MAIN?CONGJI                       -----    -----
+  +--> ?PR?INITUART?CONGJI
+  +--> ?PR?UART_1LISTEN?CONGJI
+
+?PR?UART_1LISTEN?CONGJI               -----    -----
+  +--> ?PR?_UART_1SENDONEBYTE?CONGJI
+  +--> ?PR?_UART_1SENDPKT?CONGJI
+
+?PR?_UART_1SENDPKT?CONGJI             000EH    0003H
+  +--> ?PR?_UART_1SENDONEBYTE?CONGJI
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\stc12muti (CONGJI)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CONGJI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  C:029EH         PUBLIC        _UART_1SendOneByte
+  C:0293H         PUBLIC        _UART_2SendOneByte
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0046H         PUBLIC        UART_2Interrupt
+  D:00D8H         PUBLIC        CCON
+  C:02A8H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:0020H.0       PUBLIC        getAddr
+  D:00AFH         PUBLIC        IE2
+  D:008EH         PUBLIC        AUXR
+  C:01DFH         PUBLIC        UART_1Listen
+  D:0021H         PUBLIC        cnt
+  D:0023H         PUBLIC        uploading
+  B:0098H.2       PUBLIC        RB8
+  D:0025H         PUBLIC        flag1
+  D:008DH         PUBLIC        TH1
+  D:0026H         PUBLIC        addr1
+  D:0027H         PUBLIC        flag2
+  B:0098H.3       PUBLIC        TB8
+  D:008BH         PUBLIC        TL1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2020  11:07:02  PAGE 3
+
+
+  B:0098H.5       PUBLIC        SM2
+  C:021BH         PUBLIC        InitUART
+  B:0088H.6       PUBLIC        TR1
+  D:0028H         PUBLIC        BUF
+  D:0030H         PUBLIC        reading
+  D:009BH         PUBLIC        S2BUF
+  C:0003H         PUBLIC        _copy_arr
+  D:009AH         PUBLIC        S2CON
+  D:009CH         PUBLIC        BRT
+  D:0032H         PUBLIC        temp1
+  D:0033H         PUBLIC        RES
+  D:003BH         PUBLIC        temp2
+  C:0247H         PUBLIC        _Uart_1SendPkt
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          INITUART
+  C:021BH         LINE#         23
+  C:021BH         LINE#         24
+  C:021BH         LINE#         36
+  C:021EH         LINE#         37
+  C:0221H         LINE#         38
+  C:0224H         LINE#         39
+  C:0227H         LINE#         40
+  C:022AH         LINE#         41
+  C:022CH         LINE#         42
+  C:022EH         LINE#         43
+  C:0230H         LINE#         44
+  C:0232H         LINE#         45
+  C:0234H         LINE#         70
+  C:0237H         LINE#         71
+  C:023AH         LINE#         72
+  C:023DH         LINE#         73
+  C:0240H         LINE#         74
+  C:0243H         LINE#         76
+  C:0246H         LINE#         79
+  -------         ENDPROC       INITUART
+  -------         PROC          _UART_1SENDONEBYTE
+  D:0007H         SYMBOL        c
+  C:029EH         LINE#         81
+  C:029EH         LINE#         82
+  C:029EH         LINE#         83
+  C:02A0H         LINE#         84
+  C:02A2H         LINE#         85
+  C:02A5H         LINE#         86
+  C:02A7H         LINE#         87
+  -------         ENDPROC       _UART_1SENDONEBYTE
+  -------         PROC          _UART_2SENDONEBYTE
+  D:0007H         SYMBOL        c
+  C:0293H         LINE#         89
+  C:0293H         LINE#         90
+  C:0293H         LINE#         91
+  C:0295H         LINE#         92
+  C:029AH         LINE#         93
+  C:029DH         LINE#         94
+  -------         ENDPROC       _UART_2SENDONEBYTE
+  -------         PROC          _COPY_ARR
+  D:0008H         SYMBOL        from
+  D:000BH         SYMBOL        to
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2020  11:07:02  PAGE 4
+
+
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         96
+  C:0009H         LINE#         97
+  C:0009H         LINE#         98
+  C:000CH         LINE#         99
+  C:000CH         LINE#         100
+  C:000CH         LINE#         101
+  C:001EH         LINE#         102
+  C:0029H         LINE#         103
+  C:0034H         LINE#         104
+  C:003FH         LINE#         105
+  -------         ENDPROC       _COPY_ARR
+  -------         PROC          _UART_1SENDPKT
+  D:000EH         SYMBOL        pkt
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0247H         LINE#         106
+  C:024DH         LINE#         107
+  C:024DH         LINE#         108
+  C:0250H         LINE#         109
+  C:0250H         LINE#         110
+  C:0261H         LINE#         111
+  C:026CH         LINE#         112
+  -------         ENDPROC       _UART_1SENDPKT
+  -------         PROC          UART_1LISTEN
+  C:01DFH         LINE#         113
+  C:01DFH         LINE#         114
+  C:01DFH         LINE#         115
+  C:01E1H         LINE#         116
+  C:01E4H         LINE#         117
+  C:01E4H         LINE#         118
+  C:01E6H         LINE#         121
+  C:01EBH         LINE#         122
+  C:01EEH         LINE#         123
+  C:01EEH         LINE#         124
+  C:01F1H         LINE#         125
+  C:01F4H         LINE#         126
+  C:01F9H         LINE#         127
+  C:01FEH         LINE#         128
+  C:01FEH         LINE#         130
+  C:0200H         LINE#         131
+  C:0202H         LINE#         132
+  C:020AH         LINE#         133
+  C:0213H         LINE#         134
+  C:0215H         LINE#         135
+  C:0216H         LINE#         137
+  C:0216H         LINE#         138
+  C:0218H         LINE#         139
+  C:021AH         LINE#         140
+  C:021AH         LINE#         141
+  C:021AH         LINE#         152
+  C:021AH         LINE#         153
+  -------         ENDPROC       UART_1LISTEN
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2020  11:07:02  PAGE 5
+
+
+  C:02A8H         LINE#         155
+  C:02A8H         LINE#         156
+  C:02A8H         LINE#         157
+  C:02ABH         LINE#         159
+  C:02ABH         LINE#         160
+  C:02ABH         LINE#         162
+  C:02AEH         LINE#         207
+  -------         ENDPROC       MAIN
+  -------         PROC          UART_2INTERRUPT
+  C:0046H         LINE#         247
+  C:005DH         LINE#         249
+  C:0065H         LINE#         250
+  C:0065H         LINE#         251
+  C:0068H         LINE#         252
+  C:006BH         LINE#         253
+  C:006EH         LINE#         254
+  C:0077H         LINE#         255
+  C:007CH         LINE#         256
+  C:0080H         LINE#         257
+  C:0087H         LINE#         258
+  C:008FH         LINE#         259
+  C:0091H         LINE#         260
+  C:00AAH         LINE#         261
+  C:00AAH         LINE#         262
+  C:00B1H         LINE#         263
+  C:00B9H         LINE#         264
+  C:00BBH         LINE#         265
+  C:00C3H         LINE#         266
+  C:00C3H         LINE#         267
+  C:00C7H         LINE#         268
+  C:00CDH         LINE#         269
+  C:00D0H         LINE#         270
+  C:00E0H         LINE#         271
+  C:00E6H         LINE#         272
+  C:00E6H         LINE#         275
+  C:00E6H         LINE#         277
+  C:00E6H         LINE#         278
+  -------         ENDPROC       UART_2INTERRUPT
+  -------         ENDMOD        CONGJI
+
+  -------         MODULE        ?C?CLDPTR
+  C:0187H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:01A0H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:01CDH         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_2SENDONEBYTE?CONGJI
+
+Program Size: data=45.1 xdata=0 code=685
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

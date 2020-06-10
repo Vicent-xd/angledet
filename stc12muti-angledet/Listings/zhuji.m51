@@ -1,0 +1,103 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/10/2020  14:08:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\zhuji.obj TO .\Objects\zhuji PRINT (.\Listings\zhuji.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\zhuji.obj (ZHUJI)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\zhuji (ZHUJI)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?_COPY_ARR?ZHUJI
+            DATA    000EH     0003H     UNIT         ?DT?_UART_1SENDPKT?ZHUJI
+                    0011H     000FH                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?ZHUJI
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     001BH     UNIT         ?DT?ZHUJI
+            IDATA   003CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?MAIN?ZHUJI
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0013H     UNIT         ?PR?UART_2INTERRUPT?ZHUJI
+            CODE    0039H     000AH     UNIT         ?PR?_UART_1SENDONEBYTE?ZHUJI
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     008CH     UNIT         ?C_C51STARTUP
+            CODE    00D2H     0058H     UNIT         ?C?LIB_CODE
+            CODE    012AH     003DH     UNIT         ?PR?_COPY_ARR?ZHUJI
+            CODE    0167H     002FH     UNIT         ?PR?_DELAY?ZHUJI
+            CODE    0196H     002EH     UNIT         ?PR?INITUART?ZHUJI
+            CODE    01C4H     0026H     UNIT         ?PR?_UART_1SENDPKT?ZHUJI
+            CODE    01EAH     0026H     UNIT         ?C_INITSEG
+            CODE    0210H     000CH     UNIT         ?PR?_UART_1SENDADDR?ZHUJI
+            CODE    021CH     000CH     UNIT         ?PR?UART_1INTERRUPT?ZHUJI
+            CODE    0228H     000BH     UNIT         ?PR?_UART_2SENDONEBYTE?ZHUJI
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\zhuji (ZHUJI)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/10/2020  14:08:17  PAGE 2
+
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?ZHUJI
+  +--> ?C_INITSEG
+
+?PR?MAIN?ZHUJI
+  +--> ?PR?INITUART?ZHUJI
+  +--> ?PR?_UART_1SENDADDR?ZHUJI
+  +--> ?PR?_UART_2SENDONEBYTE?ZHUJI
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\zhuji (ZHUJI)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C?CLDPTR
+  C:00D2H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:00EBH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0118H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?ZHUJI
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COPY_ARR?ZHUJI
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_1SENDPKT?ZHUJI
+
+Program Size: data=45.1 xdata=0 code=563
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

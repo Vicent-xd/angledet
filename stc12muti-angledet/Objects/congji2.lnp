@@ -1,0 +1,3 @@
+".\Objects\congji2.obj" 
+TO ".\Objects\congji2" 
+PRINT(".\Listings\congji2.m51") RAMSIZE(256) 
