@@ -1,0 +1,1 @@
+g++ wendudet.cpp -o wd -lwiringPi
