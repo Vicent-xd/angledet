@@ -1,0 +1,138 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/04/2020  16:16:47  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\wdcongji2.obj TO .\Objects\wdcongji2 PRINT (.\Listings\wdcongji2.m51) RAMSIZE (256
+>> )
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\wdcongji2.obj (WDCONGJI2)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\wdcongji2 (WDCONGJI2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?_COPY_ARR?WDCONGJI2
+            DATA    000EH     0003H     UNIT         ?DT?_UART_1SENDPKT?WDCONGJI2
+                    0011H     000FH                  *** GAP ***
+            BIT     0020H.0   0000H.2   UNIT         ?BI?WDCONGJI2
+                    0020H.2   0000H.6                *** GAP ***
+            DATA    0021H     001FH     UNIT         ?DT?WDCONGJI2
+            IDATA   0040H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0013H     UNIT         ?PR?UART_2INTERRUPT?WDCONGJI2
+            CODE    0016H     000CH     UNIT         ?PR?_DELAY_US?WDCONGJI2
+                    0022H     0001H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     000CH     UNIT         ?PR?_UART_1SENDADDR?WDCONGJI2
+            CODE    0032H     000BH     UNIT         ?PR?_UART_2SENDONEBYTE?WDCONGJI2
+            CODE    003DH     0005H     UNIT         ?PR?MAIN?WDCONGJI2
+                    0042H     0001H                  *** GAP ***
+            CODE    0043H     0003H     ABSOLUTE     
+            CODE    0046H     008CH     UNIT         ?C_C51STARTUP
+            CODE    00D2H     0058H     UNIT         ?C?LIB_CODE
+            CODE    012AH     004BH     UNIT         ?PR?UART_1INTERRUPT?WDCONGJI2
+            CODE    0175H     003DH     UNIT         ?PR?_COPY_ARR?WDCONGJI2
+            CODE    01B2H     002FH     UNIT         ?PR?_DELAY_UMS?WDCONGJI2
+            CODE    01E1H     002EH     UNIT         ?PR?INITUART?WDCONGJI2
+            CODE    020FH     002EH     UNIT         ?C_INITSEG
+            CODE    023DH     002BH     UNIT         ?PR?INIT_DS18B20?WDCONGJI2
+            CODE    0268H     0026H     UNIT         ?PR?READONECHAR?WDCONGJI2
+            CODE    028EH     0026H     UNIT         ?PR?_UART_1SENDPKT?WDCONGJI2
+            CODE    02B4H     0025H     UNIT         ?PR?READTEMPERATURE?WDCONGJI2
+            CODE    02D9H     0023H     UNIT         ?PR?_WRITEONECHAR?WDCONGJI2
+            CODE    02FCH     000AH     UNIT         ?PR?_UART_1SENDONEBYTE?WDCONGJI2
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/04/2020  16:16:47  PAGE 2
+
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\wdcongji2 (WDCONGJI2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?UART_1INTERRUPT?WDCONGJI2
+  +--> ?PR?READTEMPERATURE?WDCONGJI2
+  +--> ?PR?_UART_1SENDONEBYTE?WDCONGJI2
+
+?PR?READTEMPERATURE?WDCONGJI2
+  +--> ?PR?INIT_DS18B20?WDCONGJI2
+  +--> ?PR?_WRITEONECHAR?WDCONGJI2
+  +--> ?PR?READONECHAR?WDCONGJI2
+
+?PR?INIT_DS18B20?WDCONGJI2
+  +--> ?PR?_DELAY_US?WDCONGJI2
+
+?PR?_WRITEONECHAR?WDCONGJI2
+  +--> ?PR?_DELAY_US?WDCONGJI2
+
+?PR?READONECHAR?WDCONGJI2
+  +--> ?PR?_DELAY_US?WDCONGJI2
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?WDCONGJI2
+  +--> ?C_INITSEG
+
+?PR?MAIN?WDCONGJI2
+  +--> ?PR?INITUART?WDCONGJI2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\wdcongji2 (WDCONGJI2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C?CLDPTR
+  C:00D2H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:00EBH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0118H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_UMS?WDCONGJI2
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/04/2020  16:16:47  PAGE 3
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_2SENDONEBYTE?WDCONGJI2
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COPY_ARR?WDCONGJI2
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_1SENDADDR?WDCONGJI2
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_1SENDPKT?WDCONGJI2
+
+Program Size: data=49.2 xdata=0 code=772
+LINK/LOCATE RUN COMPLETE.  5 WARNING(S),  0 ERROR(S)

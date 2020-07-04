@@ -1,3 +1,0 @@
-".\Objects\wdcongji1.obj" 
-TO ".\Objects\wendu" 
-PRINT(".\Listings\wendu.m51") RAMSIZE(256) 

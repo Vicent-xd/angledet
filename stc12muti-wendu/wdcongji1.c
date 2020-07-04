@@ -252,9 +252,9 @@ void main(void)
 			 }
 			}*/
 			//float tempreture=gettemp();
-			ReadTemperature();
-				UART_2SendOneByte(tempL);
-				UART_2SendOneByte(tempH);
+			//ReadTemperature();
+				//UART_2SendOneByte(tempL);
+				//UART_2SendOneByte(tempH);
 			//UART_2SendOneByte(tempH);
 			//UART_2SendOneByte(tempL);
 			//delay_ums(1000);
@@ -272,7 +272,7 @@ void main(void)
 		}
 }
 /************串行口1中断处理函数*************/ 
-
+/*
 void UART_1Interrupt(void) interrupt 4  
 {  
     if(RI==1)  
@@ -281,7 +281,40 @@ void UART_1Interrupt(void) interrupt 4
         flag1=1;  
         temp1=SBUF;
     }  
-}  
+}  */
+/************串行口1中断处理函数*************/  
+void UART_1Interrupt(void) interrupt 4
+{
+  ES=0;
+	if(RI==1)
+	{
+		RI=0;
+		temp1=SBUF;
+		if(RB8)
+				{				
+					//UART_1SendOneByte(0x00);//got rb8
+					if (temp1==addr1)
+					{
+						//UART_1SendOneByte(addr1);
+						SM2=1;//中断地址
+						getAddr=1;
+						/*if (uploaded==0)
+							Uart_1SendPkt(BUF);
+						  uploaded=1;*/
+						ReadTemperature();
+						UART_1SendOneByte(tempL);
+						UART_1SendOneByte(tempH);
+					}
+					else
+					{
+						SM2=1;//只中断地址帧
+						getAddr=0;
+					}
+				}
+
+	}
+	ES=1;
+}
 /************串行口2中断处理函数*************/  
 
 void UART_2Interrupt(void) interrupt 8  
